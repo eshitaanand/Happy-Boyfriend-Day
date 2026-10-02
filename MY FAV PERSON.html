@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>For My Favourite Person ❤️</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap');
+*{box-sizing:border-box} html,body{margin:0;min-height:100%;font-family:'DM Sans',sans-serif}
+body{background:#10090d;color:#fff;overflow-x:hidden}
+.page{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:22px}
+.card{width:min(430px,100%);min-height:calc(100vh - 44px);border-radius:30px;position:relative;overflow:hidden;
+background:radial-gradient(circle at 50% 15%,#52202f 0,#26121a 35%,#10090d 72%);
+box-shadow:0 20px 70px #0009;padding:28px 22px 32px;display:flex;flex-direction:column}
+.glow{position:absolute;width:240px;height:240px;border-radius:50%;filter:blur(55px);background:#c95b7d55;top:-80px;right:-70px}
+.screen{position:relative;z-index:2;min-height:100%;display:flex;flex-direction:column;align-items:center;text-align:center;animation:fade .6s ease}
+.hidden{display:none!important}@keyframes fade{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.kicker{letter-spacing:4px;font-size:10px;text-transform:uppercase;color:#eab7c5;margin-top:34px}
+h1,h2{font-family:'Playfair Display',serif;font-weight:600;margin:12px 0}
+h1{font-size:42px;line-height:1.05}h2{font-size:32px}
+p{line-height:1.7;color:#eadde1;font-size:15px}
+.heart{font-size:52px;margin:28px 0 8px;animation:pulse 1.8s infinite}
+@keyframes pulse{50%{transform:scale(1.1)}}
+.tap{margin-top:auto;padding:14px 24px;border:1px solid #ffffff2b;background:#ffffff12;color:#fff;border-radius:999px;font-weight:600;cursor:pointer;backdrop-filter:blur(10px)}
+.tap span{opacity:.65;font-size:12px;margin-left:5px}
+.dots{display:flex;gap:6px;margin:18px 0}.dot{width:6px;height:6px;border-radius:50%;background:#ffffff2e}.dot.active{background:#f3a6bc;width:20px}
+.photo-grid{width:100%;display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:18px 0}
+.photo{aspect-ratio:1/1.12;border-radius:18px;background:linear-gradient(135deg,#3b202a,#1a1015);border:1px solid #ffffff16;overflow:hidden;position:relative}
+.photo img{width:100%;height:100%;object-fit:cover;display:block}.photo label{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#d8bfc7;font-size:12px}
+.reasons{width:100%;text-align:left;margin-top:10px}.reason{padding:15px 16px;border:1px solid #ffffff12;background:#ffffff09;border-radius:16px;margin:9px 0;color:#f3e7ea}
+.reason b{color:#f5b1c5;margin-right:8px}
+.final{margin-top:15px;padding:22px 18px;border-radius:22px;background:#ffffff0b;border:1px solid #ffffff14}
+.small{font-size:12px;color:#bdaeb4;margin-top:16px}
+.spark{position:absolute;pointer-events:none;animation:float 3s linear forwards;font-size:16px}
+@keyframes float{0%{opacity:0;transform:translateY(20px) scale(.5)}15%{opacity:1}100%{opacity:0;transform:translateY(-130px) translateX(var(--x)) scale(1.1)}}
+</style>
+</head>
+<body>
+<div class="page"><main class="card"><div class="glow"></div>
+
+<section class="screen" id="s1">
+  <div class="kicker">A little something for you</div>
+  <div class="heart">♡</div>
+  <h1>Happy<br>Boyfriend Day</h1>
+  <p>For the person who somehow became<br>my favourite part of every day.</p>
+  <button class="tap" onclick="next(2)"> OPEN ME <span>→</span></button>
+</section>
+
+<section class="screen hidden" id="s2">
+  <div class="kicker">Just a reminder</div>
+  <h2>I Love You Pippo My Love❤️</h2>
+  <p style="margin-top:8px">I don't always say it perfectly,<br>but having you in my life means<br>more to me than you know. ❤️</p>
+  <div class="final">
+    <p style="margin:0">Thank you for the little things,<br>the laughs, the patience,<br>and simply being <i>you</i>.</p>
+  </div>
+  <button class="tap" onclick="next(3)">There's more <span>→</span></button>
+</section>
+
+<section class="screen hidden" id="s3">
+  <div class="kicker">Our little memories</div>
+  <h2>Our Favourite Memories 📷</h2>
+  <div class="photo-grid">
+    <div class="photo"><img src="photo1.jpg.jpeg" onerror="this.style.display='none'"></div>
+    <div class="photo"><img src="photo2.jpg.jpeg" onerror="this.style.display='none'"></div>
+    <div class="photo"><img src="photo3.jpg.jpeg" onerror="this.style.display='none'"></div>
+    <div class="photo"><img src="photo4.jpg.jpeg" onerror="this.style.display='none'"></div>
+  </div>
+  <button class="tap" onclick="next(4)">One last thing <span>→</span></button>
+</section>
+
+<section class="screen hidden" id="s4">
+  <div class="kicker">Reasons, just because</div>
+  <h2>Why you're special</h2>
+  <div class="reasons">
+    <div class="reason"><b>01</b> You're the only one who understands me.</div>
+    <div class="reason"><b>02</b> You know how to make me smile.</div>
+    <div class="reason"><b>03</b> With you, I can just be myself.</div>
+    <div class="reason"><b>04</b> Somehow, you became my favourite person.</div>
+  </div>
+  <button class="tap" onclick="next(5)">Open my message <span>→</span></button>
+</section>
+
+<section class="screen hidden" id="s5">
+  <div class="heart">♥</div>
+  <div class="kicker">For you</div>
+  <h2>My favourite Person.</h2>
+  <div class="final">
+    <p style="margin:0">Happy Pippo Day!<br><br>
+    I hope you always know how loved, appreciated and important you are to me.
+    Here's to more memories, more silly moments, more laughter and more <i>us</i>.
+    <br><br><b>I'm really lucky to have you. ❤️</b></p>
+  </div>
+  <p class="small">Made with love, just for you.</p>
+  <button class="tap" onclick="restart()">Replay ↻</button>
+</section>
+</main></div>
+
+<script>
+let current=1;
+function next(n){
+ document.querySelectorAll('.screen').forEach(x=>x.classList.add('hidden'));
+ document.getElementById('s'+n).classList.remove('hidden');
+ current=n; burst();
+}
+function restart(){next(1)}
+function burst(){
+ for(let i=0;i<10;i++){
+  const e=document.createElement('div');e.className='spark';e.textContent=Math.random()>.35?'♥':'✦';
+  e.style.left=(25+Math.random()*50)+'%';e.style.top=(45+Math.random()*20)+'%';
+  e.style.setProperty('--x',(Math.random()*160-80)+'px');document.querySelector('.card').appendChild(e);
+  setTimeout(()=>e.remove(),3000);
+ }
+}
+</script>
+</body>
+</html>
